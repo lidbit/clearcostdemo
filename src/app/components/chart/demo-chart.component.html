@@ -1,0 +1,27 @@
+<kendo-chart>
+<!--  <kendo-chart-title text="MARKET COMPARISON (% Spend)"></kendo-chart-title>-->
+  <kendo-chart-legend position="bottom" orientation="horizontal"></kendo-chart-legend>
+  <kendo-chart-category-axis>
+    <kendo-chart-category-axis-item *ngIf="!(isSmallerToMediumScreen$ | async)"
+      [categories]="['APPS', 'NETWORK', 'END USER', 'COMPUTE', 'DELIVERY', 'IT MNGT', 'SECURITY', 'PLATFORM', 'DATA CENTRE', '*PROJECTS']">
+    </kendo-chart-category-axis-item>
+  </kendo-chart-category-axis>
+  <kendo-chart-series>
+    <kendo-chart-series-item name="Organisation"
+      [gap]="2"
+      [spacing]="0.25"
+      [data]="[38, 28, 17, 15, 12, 3, 4, 1, 3, 2, 0.5]"
+    >
+    </kendo-chart-series-item>
+    <kendo-chart-series-item name="Market" [data]="[29, 15, 17, 10, 9.5, 3, 7, 6, 4, 1, 0.01]">
+    </kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>
+
+<!--TODO - REMOVE this before demo-->
+<!--<div *ngIf="sm$ | async">sm</div>-->
+<!--<div *ngIf="md$ | async">md</div>-->
+<!--<div *ngIf="lg$ | async">lg</div>-->
+<!--<div *ngIf="xl$ | async">xl</div>-->
+<!--<div *ngIf="xl2$ | async">2xl</div>-->
+<!--<div *ngIf=" isSmallerToMediumScreen$ | async"> smalltomedium</div>-->

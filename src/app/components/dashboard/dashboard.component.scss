@@ -1,0 +1,83 @@
+//.custom-grid {
+//  font-family: Poppins, 'RobotoRegular', Helvetica, Arial, sans-serif;
+//  display: flex;
+//  flex-wrap: wrap;
+//}
+//.td-description {
+//  text-align: right;
+//}
+//
+//.td-description {
+//  text-align: left;
+//}
+
+h6{
+  text-align: center;
+}
+
+.custom-table{
+  width:100%;
+  font-family: Poppins, 'RobotoRegular', Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  padding-bottom: 20px;
+}
+.custom-table > tr {
+  minwidth: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 0.5px solid lightgray;
+  padding: 5px;
+}
+
+.custom-table > tr:first-child, {
+  border-top: none;
+}
+
+.result {
+  align-self: flex-end;
+  text-align: right;
+  min-width: 50px;
+  flex: 1 1 0;
+}
+.target {
+  align-self: flex-end;
+  text-align: right;
+  min-width: 50px;
+  max-width: 70px;
+  flex: 1 1 0;
+}
+//.custom-row {
+//  minwidth: 300px;
+//  width: 100p;
+//  display: flex;
+//  flex-direction: row;
+//  justify-content: space-between;
+//  border-top: 0.5px solid lightgray;
+//  padding: 1px;
+//}
+.result-column{
+  text-align: right;
+}
+.custom-container{
+  display:flex;
+  flex-direction: row;
+  align-content: baseline;
+}
+.k-tilelayout-item-header .k-card-title {
+  font-size: 0.1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .custom-table > tr {
+    minwidth: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 0.5px solid lightgray;
+    padding: 0.1px;
+    text-overflow: ellipsis;
+  }
+}

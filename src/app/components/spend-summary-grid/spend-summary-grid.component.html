@@ -1,0 +1,42 @@
+<kendo-grid
+  [data]="gridItems | async"
+  [pageSize]="pageSize"
+  [pageable]="false"
+  (pageChange)="pageChange($event)"
+  scrollable="none"
+  [sortable]="true"
+  [sort]="sortDescriptor"
+  (sortChange)="handleSortChange($event)"
+  style="border: none"
+>
+  <kendo-grid-column field="ProductName"  class="cc-cell-text" title=""></kendo-grid-column>
+  <kendo-grid-column  class="cc-cell-text" field="QuantityPerUnit" title="Current"></kendo-grid-column>
+  <kendo-grid-column  class="cc-cell-text" field="UnitPrice" title="YTD" format="{0:c}"></kendo-grid-column>
+  <kendo-grid-column  *ngIf=" !(sm$ | async)" class="cc-cell-text" field="QuantityPerUnit" title="Target"></kendo-grid-column>
+</kendo-grid>
+
+
+<!--original grid setup from demo-->
+<!--<kendo-grid-->
+<!--  [data]="gridItems | async"-->
+<!--  [pageSize]="pageSize"-->
+<!--  [skip]="skip"-->
+<!--  [pageable]="false"-->
+<!--  (pageChange)="pageChange($event)"-->
+<!--  [sortable]="true"-->
+<!--  [sort]="sortDescriptor"-->
+<!--  (sortChange)="handleSortChange($event)"-->
+<!--  [height]="400"-->
+<!--&gt;-->
+<!--    <kendo-grid-column field="ProductID" ></kendo-grid-column>-->
+<!--  <kendo-grid-column field="ProductName" title=""></kendo-grid-column>-->
+<!--  <kendo-grid-column *ngIf="!isYTD" field="QuantityPerUnit" title="Current"></kendo-grid-column>-->
+<!--  <kendo-grid-column   *ngIf="isYTD"  field="UnitPrice" title="Unit Price" format="{0:c}"></kendo-grid-column>-->
+
+<!--    <kendo-grid-column field="Discontinued" filter="boolean">-->
+<!--      <ng-template kendoGridCellTemplate let-dataItem>-->
+<!--        <input type="checkbox" [checked]="dataItem.Discontinued" disabled />-->
+<!--      </ng-template>-->
+<!--    </kendo-grid-column>-->
+<!--   ... -->
+<!--</kendo-grid>-->

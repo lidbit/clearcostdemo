@@ -1,0 +1,105 @@
+  <kendo-tilelayout [columns]="6" [rowHeight]="128"
+    [resizable]="true" [reorderable]="true" class="flex-wrap: nowrap" >
+    <kendo-tilelayout-item title="OPEX" style="text-align: center" [col]="1" [colSpan]="2">
+      <kendo-tilelayout-item-body style="border-bottom: 3px solid #5bbc83">
+        <app-custom-card></app-custom-card>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="CAPEX" style="text-align: center" [col]="3" [colSpan]="2">
+      <kendo-tilelayout-item-body style="border-bottom: 3px solid #b62531">
+<!--        <div style="text-align:center; font-size: 14px; line-height: 14px; vertical-align: bottom">CAPEX</div>-->
+        <div style="height: 100%; display: flex; justify-content:space-around; align-items: center;">
+          <div style="font-size: 10px; line-height: 10px; margin:0; padding: 0; font-weight: 200;  text-align: justify; background-color: white; ">
+            $84.5M
+            <div style="font-size: 8px; line-height: 8px; text-align: center;">
+              budget
+            </div>
+          </div>
+          <div style="font-size: 28px; line-height: 28px; font-weight: 300; color: #b62531 ">$84.5M</div>
+          <div style="font-size: 10px; line-height: 10px; margin:0; padding: 0; font-weight: 200; color: #b62531;">
+            0.1M
+            <div style="font-size: 8px; line-height: 8px; text-align: center; vertical-align: top">over</div>
+          </div>
+        </div>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="FTE"  style="text-align: center" [col]="5" [colSpan]="2">
+      <kendo-tilelayout-item-body style="border-bottom: 3px solid #b62531">
+<!--        <div style="text-align:center; font-size: 14px; line-height: 16px; vertical-align: bottom">-->
+<!--          FTE-->
+<!--        </div>-->
+        <div style="height: 100%; display: flex; justify-content:space-around; align-items: center; ">
+          <div style="font-size: 10px; line-height: 10px; margin:0; padding: 0; font-weight: 200;  text-align: justify; background-color: white; ">
+            128.1
+            <div style="font-size: 8px; line-height: 8px; text-align: center;">
+              budget
+            </div>
+          </div>
+          <div style="font-size: 32px; line-height: 32px; font-weight: 300; color: #b62531 ">131.6</div>
+          <div style="font-size: 10px; line-height: 10px; margin:0; padding: 0; font-weight: 200; color: #b62531;">
+            3.5
+            <div style="font-size: 8px; line-height: 8px; text-align: center; vertical-align: top">over</div>
+          </div>
+        </div>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="TECH KPI's" style="text-align: center" [col]="1" [colSpan]="2" [rowSpan]="2">
+      <kendo-tilelayout-item-body>
+       <table class="custom-table">
+        <tr >
+          <th></th>
+          <th class="result-column">Current</th>
+        </tr>
+        <tr  *ngFor="let techKpi of techKpis">
+            <td>{{techKpi.description}}</td>
+            <td class="result-column">{{techKpi.currentResult}}</td>
+        </tr>
+       </table>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="BUSI KPI's" style="text-align: center" [col]="3" [colSpan]="2" [rowSpan]="2">
+      <kendo-tilelayout-item-body>
+        <table class="custom-table">
+          <tr>
+            <th></th>
+            <th class="result">Current</th>
+            <th class="target">Target</th>
+          </tr>
+          <tr *ngFor="let businessKpi of businessKpis ">
+            <td >{{businessKpi.description}}</td>
+            <td class="result">{{businessKpi.currentResult}}</td>
+            <td class="target">{{businessKpi.targetResult}}</td>
+          </tr>
+        </table>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="OPER KPI's" style="text-align: center" [col]="5" [colSpan]="2" [rowSpan]="2">
+    <kendo-tilelayout-item-body>
+      <table class="custom-table">
+        <tr>
+          <th></th>
+          <th class="result">Current</th>
+          <th class="target">Target</th>
+        </tr>
+        <tr *ngFor="let operationalKpi of operationalKpis">
+          <td >{{operationalKpi.description}}</td>
+          <td class="result">{{operationalKpi.currentResult}}</td>
+          <td class="target">{{operationalKpi.targetResult}}</td>
+        </tr>
+      </table>
+    </kendo-tilelayout-item-body>
+  </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="MARKET COMPARISON (% Spend)" style="text-align: center" [col]="1" [colSpan]="6" [rowSpan]="4">
+      <kendo-tilelayout-item-body>
+        <demo-chart></demo-chart>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="OPERATIONAL KPI's" style="text-align: center" [col]="1" [colSpan]="6" [rowSpan]="3">
+          <kendo-tilelayout-item-body>
+            <app-spend-summary-grid></app-spend-summary-grid>
+          </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+    <kendo-tilelayout-item title="PROJECT COMPLETION" style="text-align: center" [col]="1" [colSpan]="6" [rowSpan]="3">
+      <responsive-pie-component></responsive-pie-component>
+    </kendo-tilelayout-item>
+</kendo-tilelayout>

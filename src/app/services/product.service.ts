@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataResult, orderBy, process, SortDescriptor } from '@progress/kendo-data-query';
 import { Observable, of } from 'rxjs';
-import { products } from './data.products';
+import { products } from '../data/data-products';
 
 @Injectable()
 export class ProductService {
